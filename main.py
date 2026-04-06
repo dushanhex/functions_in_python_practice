@@ -31,3 +31,20 @@ def min_max(numbers):
  
 low, high = min_max([4, 1, 9, 2, 7])
 print(f"Min: {low}, Max: {high}")
+
+# ── 4. RECURSION BASICS ─────────────────────────────────────
+# A recursive function calls ITSELF with a smaller problem.
+# Every recursive function needs:
+#   (a) A BASE CASE  — when to stop
+#   (b) A RECURSIVE CASE — calling itself with a simpler input
+ 
+def countdown(n):
+    """Count down from n to 1, then say Liftoff!"""
+    if n <= 0:                  # base case
+        print("🚀 Liftoff!")
+    else:
+        print(n)
+        countdown(n - 1)        # recursive case
+ 
+countdown(5)
+ 
