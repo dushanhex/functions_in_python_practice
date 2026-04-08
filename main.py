@@ -32,7 +32,7 @@ def min_max(numbers):
 low, high = min_max([4, 1, 9, 2, 7])
 print(f"Min: {low}, Max: {high}")
 
-# ── 4. RECURSION BASICS ─────────────────────────────────────
+# ── 4. RECURSION BASICS 
 # A recursive function calls ITSELF with a smaller problem.
 # Every recursive function needs:
 #   (a) A BASE CASE  — when to stop
@@ -47,4 +47,14 @@ def countdown(n):
         countdown(n - 1)        # recursive case
  
 countdown(5)
+ # ── 5. FACTORIAL 
+# factorial(5) = 5 * 4 * 3 * 2 * 1 = 120
  
+def factorial(n):
+    """Return n! using recursion."""
+    if n == 0 or n == 1:        # base case
+        return 1
+    return n * factorial(n - 1) # recursive case
+ 
+print(f"5! = {factorial(5)}")   # 120
+print(f"0! = {factorial(0)}")   # 1
