@@ -58,3 +58,17 @@ def factorial(n):
  
 print(f"5! = {factorial(5)}")   # 120
 print(f"0! = {factorial(0)}")   # 1
+
+# ── 6. FIBONACCI SEQUENCE
+# Each number is the sum of the two before it: 0 1 1 2 3 5 8 …
+ 
+def fibonacci(n):
+    """Return the nth Fibonacci number."""
+    if n <= 0:
+        return 0                           # base case
+    if n == 1:
+        return 1                           # base case
+    return fibonacci(n - 1) + fibonacci(n - 2)  # recursive case
+ 
+print("Fibonacci sequence (first 8 terms):")
+print([fibonacci(i) for i in range(8)])   # [0,1,1,2,3,5,8,13]
