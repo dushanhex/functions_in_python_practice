@@ -72,3 +72,27 @@ def fibonacci(n):
  
 print("Fibonacci sequence (first 8 terms):")
 print([fibonacci(i) for i in range(8)])   # [0,1,1,2,3,5,8,13]
+
+# ── 7. BINARY SEARCH (recursion on a sorted list) 
+# Efficiently find an item by repeatedly halving the search range.
+ 
+def binary_search(arr, target, low=0, high=None):
+    """Return the index of target in sorted arr, or -1 if not found."""
+    if high is None:
+        high = len(arr) - 1
+ 
+    if low > high:              # base case: not found
+        return -1
+ 
+    mid = (low + high) // 2
+ 
+    if arr[mid] == target:      # base case: found it!
+        return mid
+    elif arr[mid] < target:
+        return binary_search(arr, target, mid + 1, high)  # search right
+    else:
+        return binary_search(arr, target, low, mid - 1)   # search left
+ 
+sorted_list = [2, 5, 8, 12, 16, 23, 38, 45]
+print(f"Search for 23 → index {binary_search(sorted_list, 23)}")  # 5
+print(f"Search for 10 → index {binary_search(sorted_list, 10)}")  # -1
