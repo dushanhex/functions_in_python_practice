@@ -96,3 +96,19 @@ def binary_search(arr, target, low=0, high=None):
 sorted_list = [2, 5, 8, 12, 16, 23, 38, 45]
 print(f"Search for 23 → index {binary_search(sorted_list, 23)}")  # 5
 print(f"Search for 10 → index {binary_search(sorted_list, 10)}")  # -1
+
+# ── 8. FLATTEN A NESTED LIST
+# Recursion shines when the depth of nesting is unpredictable.
+ 
+def flatten(data):
+    """Flatten a deeply nested list into a single list."""
+    result = []
+    for item in data:
+        if isinstance(item, list):          # it's a sub-list → recurse
+            result.extend(flatten(item))
+        else:
+            result.append(item)             # base case: plain value
+    return result
+ 
+nested = [1, [2, 3], [4, [5, [6, 7]]], 8]
+print(f"Flattened: {flatten(nested)}")  # [1, 2, 3, 4, 5, 6, 7, 8]
