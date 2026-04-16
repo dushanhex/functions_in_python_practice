@@ -112,3 +112,10 @@ def flatten(data):
  
 nested = [1, [2, 3], [4, [5, [6, 7]]], 8]
 print(f"Flattened: {flatten(nested)}")  # [1, 2, 3, 4, 5, 6, 7, 8]
+
+# ── SUMMARY 
+print("\n--- KEY TAKEAWAYS ---")
+print("1. Functions: reusable blocks with parameters & return values.")
+print("2. Recursion: a function solving a problem by calling itself.")
+print("3. Every recursion MUST have a base case to avoid infinite loops.")
+print("4. Great for: factorials, Fibonacci, search, trees, nested data.")
